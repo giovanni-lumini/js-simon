@@ -35,7 +35,6 @@ let array_random_numbers = [random_1, random_2, random_3, random_4, random_5];
 container_num.innerHTML = array_random_numbers;
 console.log(array_random_numbers);
 
-
 //2-Da lì parte un timer di 30 secondi. (FATTO)
 const clock = setTimeout(my_function, 3000);
 //3-Dopo 30 secondi:
@@ -62,10 +61,17 @@ function user_numbers() {
     n5_value = n5.value;
     let array_user_numbers = [n1_value, n2_value, n3_value, n4_value, n5_value];
     console.log(array_user_numbers);
+
+    let array_num_indovinati = [];
+    for (let i = 0; i <= array_user_numbers.length; i++){
+        if (array_random_numbers.includes(array_user_numbers[i])){
+            array_num_indovinati.push(array_user_numbers[i])
+        } else {
+            array_num_indovinati.push("X")
+        }
+    }
+    console.log(array_num_indovinati);
+    
+        
 }
 //4-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-
-
-
-
-

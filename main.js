@@ -63,7 +63,7 @@ function user_numbers() {
     let amount_num_guessed = [0];
     for (let i = 0; i < array_user_numbers.length; i++){
         if (array_random_numbers.includes(array_user_numbers[i])){
-            array_num_guessed.push(`Indovinato ${array_user_numbers[i]}`);
+            array_num_guessed.push(array_user_numbers[i]);
             amount_num_guessed++;
         } else {
             array_num_guessed.push("Sbagliato");

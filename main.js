@@ -58,14 +58,18 @@ function user_numbers() {
     let array_user_numbers = [n1_value, n2_value, n3_value, n4_value, n5_value];
     console.log(array_user_numbers);
 
-    let array_num_indovinati = [];
+    let array_num_guessed = [];
+    let amount_num_guessed = [0];
     for (let i = 0; i < array_user_numbers.length; i++){
         if (array_random_numbers.includes(array_user_numbers[i])){
-            array_num_indovinati.push(array_user_numbers[i]);
+            array_num_guessed.push(`Indovinato ${array_user_numbers[i]}`);
+            amount_num_guessed++;
         } else {
-            array_num_indovinati.push("X");
+            array_num_guessed.push("Sbagliato");
         }
     }
-    console.log(array_num_indovinati);     
+    console.log(array_num_guessed);
+    console.log(`Hai indovinato ${amount_num_guessed} numeri`);
+        
 }
 //4-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.

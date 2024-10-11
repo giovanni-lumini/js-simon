@@ -22,6 +22,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //1-Visualizzare in pagina 5 numeri casuali. (FATTO)
 let container_num = document.getElementById("container_num");
 let container_imput = document.getElementById("container_imput");
+let guessed_numbers = document.getElementById("guessed_numbers");
 let btn = document.getElementById("btn");
 
 let array_random_numbers = [];
@@ -68,8 +69,8 @@ function user_numbers() {
             array_num_guessed.push("Sbagliato");
         }
     }
-    console.log(array_num_guessed);
-    console.log(`Hai indovinato ${amount_num_guessed} numeri`);
-        
+    console.log(`Hai indovinato ${amount_num_guessed} numeri: ${array_num_guessed}`);
+
+    guessed_numbers.innerHTML = (`Hai indovinato ${amount_num_guessed} numeri: ${array_num_guessed}`)  
 }
 //4-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.

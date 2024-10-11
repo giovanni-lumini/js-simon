@@ -20,7 +20,6 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 */
 
 //1-Visualizzare in pagina 5 numeri casuali. (FATTO)
-
 let container_num = document.getElementById("container_num");
 let container_imput = document.getElementById("container_imput");
 let btn = document.getElementById("btn");
@@ -30,7 +29,6 @@ for (let i = 0; i <5; i++) {
     array_random_numbers.push(Math.floor(Math.random() * 11));
 }
 console.log(array_random_numbers);
-
 container_num.innerHTML = array_random_numbers;
 
 
@@ -39,9 +37,8 @@ const clock = setTimeout(my_function, 3000);
 //3-Dopo 30 secondi:
 //3.1-i numeri scompaiono (FATTO)
 function my_function() {
-    container_num.style.display = "none";
-    /* container_imput.style.display = "block"; */
-    container_imput.classList.remove("d-none");
+    container_num.style.display = "none"; //aggiunto classe
+    container_imput.classList.remove("d-none"); //rimosso classe
 }
 
 //3.2-appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
@@ -49,15 +46,15 @@ btn.addEventListener("click",user_numbers);
 
 function user_numbers() {
     let n1 = document.getElementById("n1");
-    n1_value = n1.value;
+    n1_value = Number(n1.value);
     let n2 = document.getElementById("n2");
-    n2_value = n2.value;
+    n2_value = Number(n2.value);
     let n3 = document.getElementById("n3");
-    n3_value = n3.value;
+    n3_value = Number(n3.value);
     let n4 = document.getElementById("n4");
-    n4_value = n4.value;
+    n4_value = Number(n4.value);
     let n5 = document.getElementById("n5");
-    n5_value = n5.value;
+    n5_value = Number(n5.value);
     let array_user_numbers = [n1_value, n2_value, n3_value, n4_value, n5_value];
     console.log(array_user_numbers);
 

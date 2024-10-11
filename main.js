@@ -25,15 +25,14 @@ let container_num = document.getElementById("container_num");
 let container_imput = document.getElementById("container_imput");
 let btn = document.getElementById("btn");
 
-let random_1 = Math.floor(Math.random() * 11);
-let random_2 = Math.floor(Math.random() * 11);
-let random_3 = Math.floor(Math.random() * 11);
-let random_4 = Math.floor(Math.random() * 11);
-let random_5 = Math.floor(Math.random() * 11);
-
-let array_random_numbers = [random_1, random_2, random_3, random_4, random_5];
-container_num.innerHTML = array_random_numbers;
+let array_random_numbers = [];
+for (let i = 0; i <5; i++) {
+    array_random_numbers.push(Math.floor(Math.random() * 11));
+}
 console.log(array_random_numbers);
+
+container_num.innerHTML = array_random_numbers;
+
 
 //2-Da lì parte un timer di 30 secondi. (FATTO)
 const clock = setTimeout(my_function, 3000);
@@ -63,15 +62,13 @@ function user_numbers() {
     console.log(array_user_numbers);
 
     let array_num_indovinati = [];
-    for (let i = 0; i <= array_user_numbers.length; i++){
+    for (let i = 0; i < array_user_numbers.length; i++){
         if (array_random_numbers.includes(array_user_numbers[i])){
-            array_num_indovinati.push(array_user_numbers[i])
+            array_num_indovinati.push(array_user_numbers[i]);
         } else {
-            array_num_indovinati.push("X")
+            array_num_indovinati.push("X");
         }
     }
-    console.log(array_num_indovinati);
-    
-        
+    console.log(array_num_indovinati);     
 }
 //4-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
